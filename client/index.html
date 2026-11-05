@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Go WebSocket Test Client</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Go WebSocket Client Hub</h1>
+        <div id="connection-status" class="status disconnected">
+          Disconnected
+        </div>
+      </header>
+
+      <div class="grid">
+        <!-- Control Panel -->
+        <div class="panel controls-panel">
+          <h2>Room Controls</h2>
+          <div class="form-group">
+            <label for="room-id-input">Room ID:</label>
+            <input
+              type="text"
+              id="room-id-input"
+              value="ROOM_ONE"
+              placeholder="Enter room ID"
+            />
+          </div>
+          <div class="button-group">
+            <button id="btn-join" class="btn primary">Join Room</button>
+            <button id="btn-leave" class="btn danger">Leave Room</button>
+          </div>
+
+          <h2>Messaging Actions</h2>
+          <div class="form-group">
+            <label for="message-input">Payload Data:</label>
+            <input
+              type="text"
+              id="message-input"
+              value="Hello from web client!"
+              placeholder="Type a message..."
+            />
+          </div>
+          <div class="button-group">
+            <button id="btn-broadcast" class="btn secondary">
+              Send Broadcast
+            </button>
+            <button id="btn-room-msg" class="btn primary">Send Room Msg</button>
+          </div>
+        </div>
+
+        <!-- Message Log Panel -->
+        <div class="panel log-panel">
+          <div class="log-header">
+            <h2>Live Message Log</h2>
+            <button id="btn-clear" class="btn clear">Clear Log</button>
+          </div>
+          <div id="log-container" class="log-container"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
